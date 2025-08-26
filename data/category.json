@@ -1,0 +1,9 @@
+[
+  { "productCategory": "Electronics" },
+  { "productCategory": "Clothing" },
+  { "productCategory": "Books" },
+  { "productCategory": "Furniture" },
+  { "productCategory": "Sports" },
+  { "productCategory": "Beauty" },
+  { "productCategory": "Groceries" }
+]
