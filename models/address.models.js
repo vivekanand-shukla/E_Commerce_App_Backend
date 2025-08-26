@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const addressSchema = mongoose.Schema({
+const addressSchema = new mongoose.Schema({
       
     address:[{
          type:String,

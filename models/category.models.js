@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const categorySchema = mongoose.model({
+const categorySchema = new mongoose.Schema({
     productCategory:String,
 
 })

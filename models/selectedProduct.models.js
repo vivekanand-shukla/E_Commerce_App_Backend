@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const selectedProductSchema = mongoose.Schema({
+const selectedProductSchema =new mongoose.Schema({
 
 
         selectedProduct:{
@@ -15,3 +15,4 @@ const selectedProductSchema = mongoose.Schema({
 
 })
 const selectedProduct = mongoose.model('selectedProduct' ,selectedProductSchema)
+module.exports = selectedProduct;
