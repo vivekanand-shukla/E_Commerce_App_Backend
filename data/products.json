@@ -1,0 +1,245 @@
+[
+  {
+    "productImage": "https://cdn.mos.cms.futurecdn.net/MNchy2R5BdHBKrMDKrVTyL.jpg",
+    "productName": "Smartphone X",
+    "productPrice": 29999,
+    "productRating": 4.5,
+    "productDiscription": "High performance smartphone",
+    "offOnProduct": 10,
+    "longDiscription": [
+      "This smartphone features a 6.5-inch AMOLED display for vibrant colors and deep contrast.",
+      "Powered by a 5000mAh battery, it ensures full-day usage without interruptions.",
+      "Comes with 128GB storage and a fast octa-core processor for smooth multitasking."
+    ],
+    "category": "68ad529a962f458947899c21",
+    "diliveryCharges": 100
+  },
+  {
+    "productImage": "https://cdsassets.apple.com/live/7WUAS350/images/macbook-pro/macbook-pro-2021-14in.png",
+    "productName": "Laptop Pro",
+    "productPrice": 69999,
+    "productRating": 4.7,
+    "productDiscription": "Powerful laptop for professionals",
+    "offOnProduct": 15,
+    "longDiscription": [
+      "Equipped with the latest Intel i7 processor for seamless productivity.",
+      "Includes 16GB RAM and 1TB SSD to handle heavy software and fast boot times.",
+      "Slim and lightweight design makes it ideal for work and travel."
+    ],
+    "category": "68ad529a962f458947899c21",
+    "diliveryCharges": 200
+  },
+  {
+    "productImage": "https://media.assettype.com/analyticsinsight/2025-06-13/qjs05tn1/Top-10-boAt-Headphones-Best-Sound-Style-at-Affordable-Price.jpg?w=480&auto=format,compress&fit=max",
+    "productName": "Wireless Headphones",
+    "productPrice": 4999,
+    "productRating": 4.3,
+    "productDiscription": "Noise cancelling headphones",
+    "offOnProduct": 5,
+    "longDiscription": [
+      "Advanced noise-cancelling technology provides immersive sound.",
+      "Bluetooth 5.0 ensures stable connectivity with minimal lag.",
+      "Up to 20 hours of battery life with quick charging support."
+    ],
+    "category": "68ad529a962f458947899c21",
+    "diliveryCharges": 50
+  },
+  {
+    "productImage": "https://http2.mlstatic.com/D_Q_NP_2X_937571-MLA83676482982_042025-V.webp",
+    "productName": "Smart TV",
+    "productPrice": 39999,
+    "productRating": 4.6,
+    "productDiscription": "4K Ultra HD Smart TV",
+    "offOnProduct": 20,
+    "longDiscription": [
+      "55-inch Ultra HD display delivers crystal-clear visuals with HDR10+.",
+      "Smart features include streaming apps like Netflix, Prime, and YouTube.",
+      "Dolby Digital Audio ensures a theater-like experience at home."
+    ],
+    "category": "68ad529a962f458947899c21",
+    "diliveryCharges": 300
+  },
+
+  {
+    "productImage": "https://i5.walmartimages.com/seo/UPPADA-Winter-Coat-Fuzzy-Winter-Blanket-Coats-Women-Button-Thermal-Jackets-Leopard-Color-Block-Outerwear-Cat-Ear-Cute-Hoodies-Abrigos-De-Mujer-Elegan_8d22ace1-08e3-461d-8447-a1859e77ba28.d9a3393ea0cac0249be994685ba5e591.jpeg?odnHeight=580&odnWidth=580&odnBg=FFFFFF",
+    "productName": "Winter Jacket",
+    "productPrice": 1999,
+    "productRating": 4,
+    "productDiscription": "Warm and stylish winter jacket",
+    "offOnProduct": 20,
+    "longDiscription": [
+      "Designed with waterproof outer fabric to protect against snow and rain.",
+      "Inner fleece lining keeps you warm even in freezing conditions.",
+      "Available in multiple sizes and colors for a perfect fit."
+    ],
+    "category": "68ad52bf962f458947899c23",
+    "diliveryCharges": 50
+  },
+  {
+    "productImage": "https://images-na.ssl-images-amazon.com/images/I/61yL+WtknmL.jpg",
+    "productName": "Casual T-Shirt",
+    "productPrice": 599,
+    "productRating": 4.2,
+    "productDiscription": "Comfortable cotton T-shirt",
+    "offOnProduct": 10,
+    "longDiscription": [
+      "Made from 100% premium cotton for maximum comfort.",
+      "Breathable fabric ideal for summer and daily wear.",
+      "Available in multiple colors and machine-wash safe."
+    ],
+    "category": "68ad52bf962f458947899c23",
+    "diliveryCharges": 20
+  },
+  {
+    "productImage": "https://cdn.outsideonline.com/wp-content/uploads/2025/07/Asics_Kayano_32_h.jpg?width=730",
+    "productName": "Running Shoes",
+    "productPrice": 1499,
+    "productRating": 4.4,
+    "productDiscription": "Lightweight running shoes",
+    "offOnProduct": 15,
+    "longDiscription": [
+      "Designed with breathable mesh to keep feet cool during workouts.",
+      "Anti-slip sole provides excellent grip on all surfaces.",
+      "Lightweight construction reduces fatigue while running."
+    ],
+    "category": "68ad52bf962f458947899c23",
+    "diliveryCharges": 40
+  },
+  {
+    "productImage": "https://img.freepik.com/premium-photo/lot-different-blue-jeans-blue-jeans_39392-164.jpg?semt=ais_hybrid&w=740&q=80",
+    "productName": "Blue Jeans",
+    "productPrice": 1299,
+    "productRating": 4.1,
+    "productDiscription": "Classic slim fit jeans",
+    "offOnProduct": 12,
+    "longDiscription": [
+      "Crafted from high-quality denim for durability and comfort.",
+      "Stretchable fabric ensures flexibility and a better fit.",
+      "Perfect for both casual outings and semi-formal occasions."
+    ],
+    "category": "68ad52bf962f458947899c23",
+    "diliveryCharges": 30
+  },
+
+  {
+    "productImage": "https://i5.walmartimages.com/seo/Learn-JavaScript-Programming-3-Books-in-1-The-Best-Beginner-s-Guide-to-Learn-JavaScript-and-Master-Front-End-Back-End-Programming-Paperback-978180235_f9d24dec-3c02-41c8-acc0-3153d2f6464c.0d92764b87d4282e49df3e90164672a9.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF",
+    "productName": "Learn JavaScript",
+    "productPrice": 499,
+    "productRating": 5,
+    "productDiscription": "Comprehensive JS guide",
+    "offOnProduct": 15,
+    "longDiscription": [
+      "Covers all modern JavaScript concepts including ES6+.",
+      "Includes step-by-step coding examples and exercises.",
+      "Real-world projects help you learn by building applications."
+    ],
+    "category": "68ad63884341bdb4eacc934b",
+    "diliveryCharges": 30
+  },
+  {
+    "productImage": "https://files.realpython.com/media/python-basics-3d-header-wide.370657dd0129.jpg",
+    "productName": "Python Basics",
+    "productPrice": 399,
+    "productRating": 4.7,
+    "productDiscription": "Beginner Python programming",
+    "offOnProduct": 10,
+    "longDiscription": [
+      "Teaches Python fundamentals with simple examples.",
+      "Explains functions, loops, and data types clearly.",
+      "Great for students and beginners in programming."
+    ],
+    "category": "68ad63884341bdb4eacc934b",
+    "diliveryCharges": 25
+  },
+  {
+    "productImage": "https://images-na.ssl-images-amazon.com/images/I/81pEZ4afJhL.jpg",
+    "productName": "Data Structures",
+    "productPrice": 799,
+    "productRating": 4.8,
+    "productDiscription": "DSA explained",
+    "offOnProduct": 18,
+    "longDiscription": [
+      "Detailed explanation of arrays, trees, and graphs.",
+      "Includes solved problems from coding interviews.",
+      "Step-by-step examples for better understanding."
+    ],
+    "category": "68ad63884341bdb4eacc934b",
+    "diliveryCharges": 35
+  },
+  {
+    "productImage": "https://www.mlsysbook.ai/assets/images/covers/cover-hardcover-book.png",
+    "productName": "Machine Learning",
+    "productPrice": 1299,
+    "productRating": 4.6,
+    "productDiscription": "ML basics with examples",
+    "offOnProduct": 20,
+    "longDiscription": [
+      "Introduces machine learning with simple explanations.",
+      "Covers regression, classification, and clustering basics.",
+      "Practical examples using real-world datasets."
+    ],
+    "category": "68ad63884341bdb4eacc934b",
+    "diliveryCharges": 40
+  },
+
+  {
+    "productImage": "https://us.123rf.com/450wm/shevarevalex/shevarevalex2010/shevarevalex201000151/156800413-modern-gray-sofa-with-wooden-legs-in-the-room.jpg?ver=6",
+    "productName": "Modern Sofa",
+    "productPrice": 15999,
+    "productRating": 4.2,
+    "productDiscription": "Comfortable 3-seater sofa",
+    "offOnProduct": 25,
+    "longDiscription": [
+      "Upholstered with premium fabric for a stylish look.",
+      "Ergonomically designed for maximum comfort.",
+      "Durable wooden frame with long-lasting quality."
+    ],
+    "category": "68ad639a4341bdb4eacc934d",
+    "diliveryCharges": 500
+  },
+  {
+    "productImage": "https://static.vecteezy.com/system/resources/thumbnails/027/898/815/small/decorative-wooden-chair-in-living-room-interior-with-filter-effect-processing-free-photo.jpg",
+    "productName": "Wooden Chair",
+    "productPrice": 2999,
+    "productRating": 4.3,
+    "productDiscription": "Durable wooden chair",
+    "offOnProduct": 10,
+    "longDiscription": [
+      "Made from high-quality solid wood for strength.",
+      "Polished finish adds elegance to your interiors.",
+      "Comfortable backrest designed for long sitting hours."
+    ],
+    "category": "68ad639a4341bdb4eacc934d",
+    "diliveryCharges": 150
+  },
+  {
+    "productImage": "https://ashleyfurniture.scene7.com/is/image/AshleyFurniture/D486-35?$AFHS-Grid-1X$",
+    "productName": "Dining Table",
+    "productPrice": 8999,
+    "productRating": 4.5,
+    "productDiscription": "Spacious 6-seater dining table",
+    "offOnProduct": 18,
+    "longDiscription": [
+      "Spacious design allows comfortable seating for six people.",
+      "Scratch-resistant wooden surface for daily usage.",
+      "Easy to assemble with included instructions."
+    ],
+    "category": "68ad639a4341bdb4eacc934d",
+    "diliveryCharges": 400
+  },
+  {
+    "productImage": "https://www.ulcdn.net/images/products/920136/product/Baltoro_High_Gloss_Hydraulic_Storage_Bed_King_LP.jpg?1722318534",
+    "productName": "King Size Bed",
+    "productPrice": 18999,
+    "productRating": 4.6,
+    "productDiscription": "Comfortable king size bed",
+    "offOnProduct": 20,
+    "longDiscription": [
+      "Large king size bed with cushioned headboard.",
+      "Includes storage compartments for extra convenience.",
+      "Strong wooden frame ensures durability and stability."
+    ],
+    "category": "68ad639a4341bdb4eacc934d",
+    "diliveryCharges": 600
+  }
+]

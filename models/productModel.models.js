@@ -14,18 +14,17 @@ const productSchema = new mongoose.Schema({
     },
 
     productRating:{
+
           type:Number,
-          required:true
+          required:true,
+          max:5,
+          min:0
     },
     productDiscription:{
         type:String,
         required:true
     },
-    productSize:{
-        type:String,
-        required:true,
-        enum:["S","M","XL","XXL"]
-    },
+ 
     offOnProduct : {
         type:Number,
          max:100,

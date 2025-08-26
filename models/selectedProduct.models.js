@@ -2,9 +2,10 @@ const mongoose = require("mongoose")
 const selectedProductSchema =new mongoose.Schema({
 
 
-        selectedProduct:{
+        selectedProductId:{
             type: mongoose.Schema.Types.ObjectId,
-            ref:"products"
+            ref:"products",
+            require:true
         },
 
         isAddedToCart :Boolean,
