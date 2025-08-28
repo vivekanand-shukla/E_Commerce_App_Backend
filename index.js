@@ -8,7 +8,17 @@ const PORT = process.env.PORT || 3000
 const express = require("express")
 const app = express();
 app.use(express.json())
+//cors
+const cors = require("cors");
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
+app.use(cors(corsOptions));
+
+//routes
 app.get('/', (req,res)=>{
     res.send("server is running on routes after /")
 })
@@ -65,7 +75,7 @@ app.post('/api/product' ,async (req,res)=>{
 // get all products 
 async function getAllProduct(){
      try {
-            const allProduct =await  product.find()
+            const allProduct =await  product.find().populate("category")
             return allProduct
         }
         
