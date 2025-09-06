@@ -3,11 +3,16 @@ connectDb();
 const address = require("./models/address.models")
 const category = require("./models/category.models")
 const product = require("./models/productModel.models")
-const selectedProduct = require("./models/selectedProduct.models")
+
+
+
 const PORT = process.env.PORT || 3000
 const express = require("express")
 const app = express();
 app.use(express.json())
+
+
+
 //cors
 const cors = require("cors");
 const corsOptions = {
@@ -18,10 +23,14 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-//routes
+
+
+// ====routes=====
 app.get('/', (req,res)=>{
     res.send("server is running on routes after /")
 })
+
+
 //add Category Section
 async function addCategory(newCategory){
     try {
@@ -33,7 +42,6 @@ async function addCategory(newCategory){
     }
    
 }
-
 app.post("/api/category", async (req,res)=>{
          try {
          const addNewCategory =   await  addCategory(req.body)
@@ -45,31 +53,103 @@ app.post("/api/category", async (req,res)=>{
              res.status(500).json({error: "post the category failed internal server error "})
          }
 })
-// add product section
-async function addProduct(productParam){
-     try {
-    
 
-            const newProduct = new product(productParam)
-            const saveProduct =await  newProduct.save()
-            return saveProduct
-        }
-        
-      catch (error) {
-         console.log("error is : ", error)
-     }
+
+
+
+
+// ===product routes ===
+async function addProduct(productParam) {
+  try {
+   
+    const {
+      productImage,
+      productName,
+      productPrice,
+      productRating,
+      productDiscription,
+      offOnProduct,
+      longDiscription,
+      category,
+      diliveryCharges
+    } = productParam;
+
+    const newProduct = new product({
+      productImage,
+      productName,
+      productPrice,
+      productRating,
+      productDiscription,
+      offOnProduct,
+      longDiscription,
+      category,
+      diliveryCharges
+      
+    });
+
+    const saveProduct = await newProduct.save();
+    return saveProduct;
+  } catch (error) {
+    console.log("error is : ", error);
+  }
 }
-app.post('/api/product' ,async (req,res)=>{
-    try {
-         const addNewProduct  = await addProduct(req.body)
-       if(addNewProduct)  {
-        res.send({message:"product added successfully " , addedProduct:addNewProduct })
-       }
-    } catch (error) {
-         res.status(500).json({error: "post the product failed internal server error"})
+
+
+
+
+
+app.post('/api/product', async (req, res) => {
+  try {
+    console.log("Incoming Body: ", req.body); // Debug
+    const addNewProduct = await addProduct(req.body);
+    if (addNewProduct) {
+      res.send({ message: "Product added successfully", addedProduct: addNewProduct });
     }
-     
-} )
+  } catch (error) {
+    res.status(500).json({ error: "Post the product failed: internal server error" });
+  }
+});
+
+
+
+
+// bulk add products route 
+app.post('/api/products/bulk', async (req, res) => {
+  try {
+    const productsArray = req.body; 
+
+    if (!Array.isArray(productsArray) || productsArray.length === 0) {
+      return res.status(400).json({ error: "Products array is required" });
+    }
+
+  
+    const filteredProducts = productsArray.map(p => ({
+      productImage: p.productImage,
+      productName: p.productName,
+      productPrice: p.productPrice,
+      productRating: p.productRating,
+      productDiscription: p.productDiscription,
+      offOnProduct: p.offOnProduct,
+      longDiscription: p.longDiscription,
+      category: p.category,
+      diliveryCharges: p.diliveryCharges
+      
+    }));
+
+    //  insertMany will add all at once
+    const savedProducts = await product.insertMany(filteredProducts);
+
+    res.status(201).json({
+      message: "Products added successfully",
+      addedProducts: savedProducts
+    });
+
+  } catch (error) {
+    console.error("Bulk add error:", error);
+    res.status(500).json({ error: "Bulk insert failed: internal server error" });
+  }
+});
+//
 
 
 // get all products 
@@ -95,103 +175,83 @@ app.get('/api/products' ,async (req,res)=>{
      
 } )
 
+
+//update products 
+
+async function updateProduct(dataId,dataToUpdate){
+    try {
+        const updatedData = await product.findByIdAndUpdate(dataId ,dataToUpdate , {new:true})
+        return updatedData
+    } catch (error) {
+        console.log("error in updating data " ,error)
+    }
+}
+
+app.post('/api/products/update/:id' , async(req,res)=>{
+    try {
+          const updatedData = await  updateProduct(req.params.id , req.body)
+         if(updatedData){
+       res.status(200).json({message :"data updated successfully." ,updatedData :updatedData })
+    }else{
+      res.status(404).json({error :"data not found"})
+    }
+    } catch (error) {
+         res.status(500).json({error:  "Failed to update data."})
+    }
+})
+
+
+
+
+
+
 // get single product
-async function getSingleProduct(id) {
-    try {
-        const singleProduct = await product.findById(id)
-        return singleProduct
-    } catch (error) {
-        console.log("error is : ", error)
-    }
-}
+// async function getSingleProduct(id) {
+//     try {
+//         const singleProduct = await product.findById(id)
+//         return singleProduct
+//     } catch (error) {
+//         console.log("error is : ", error)
+//     }
+// }
 
-app.get('/api/product/:id', async (req, res) => {
-    try {
-        const singleProduct = await getSingleProduct(req.params.id)
-        if (singleProduct) {
-            res.send(singleProduct)
-        } else {
-            res.status(404).json({ error: "Product not found" })
-        }
-    } catch (error) {
-        res.status(500).json({ error: "get single product failed internal server error" })
-    }
-})
+// app.get('/api/product/:id', async (req, res) => {
+//     try {
+//         const singleProduct = await getSingleProduct(req.params.id)
+//         if (singleProduct) {
+//             res.send(singleProduct)
+//         } else {
+//             res.status(404).json({ error: "Product not found" })
+//         }
+//     } catch (error) {
+//         res.status(500).json({ error: "get single product failed internal server error" })
+//     }
+// })
 
-// get single category
-async function getSingleCategory(category) {
-    try {
-        const singleCategory = await product.find({category:category}).populate("category")
-        return singleCategory
-    } catch (error) {
-        console.log("error is : ", error)
-    }
-}
+// // get single category
+// async function getSingleCategory(category) {
+//     try {
+//         const singleCategory = await product.find({category:category}).populate("category")
+//         return singleCategory
+//     } catch (error) {
+//         console.log("error is : ", error)
+//     }
+// }
 
-app.get('/api/category/:id', async (req, res) => {
-    try {
-        const singleCategory = await getSingleCategory(req.params.id)
-        if (singleCategory) {
-            res.send(singleCategory)
-        } else {
-            res.status(404).json({ error: "Category not found" })
-        }
-    } catch (error) {
-        res.status(500).json({ error: "get single category failed internal server error" })
-    }
-})
+// app.get('/api/category/:id', async (req, res) => {
+//     try {
+//         const singleCategory = await getSingleCategory(req.params.id)
+//         if (singleCategory) {
+//             res.send(singleCategory)
+//         } else {
+//             res.status(404).json({ error: "Category not found" })
+//         }
+//     } catch (error) {
+//         res.status(500).json({ error: "get single category failed internal server error" })
+//     }
+// })
 
 
-// selected products 
-//post
-async function postSelectedProduct(productParam){
-       try {
-    
-           if(productParam.selectedProductId  &&  productParam.isAddedToCart && productParam.isAddedToWishList  && productParam.productQuantity && productParam.isProductOrdered){
-                const newProduct = new selectedProduct(productParam)
-            const saveProduct =await  newProduct.save()
-            return saveProduct
-           }
-          
-        }
-        
-      catch (error) {
-         console.log("error is : ", error)
-     }
-}
-app.post('/api/products/select' ,async (req,res)=>{
-    try {
-         const addSelectedProduct  = await postSelectedProduct(req.body)
-       if(addSelectedProduct)  {
-        res.send(addSelectedProduct)
-       }
-    } catch (error) {
-         res.status(500).json({error: "post the selected product failed internal server error"})
-    }
-     
-} )
-// get selected Poduct
-async function getAllSelectedProduct(){
-     try {
-            const selectedProductIs = await  selectedProduct.find()
-            return selectedProductIs
-        }
-        
-      catch (error) {
-         console.log("error is : ", error)
-     }
-}
-app.get('/api/products/selected' ,async (req,res)=>{
-    try {
-         const getAllSelectedProducts  = await getAllSelectedProduct()
-       if(getAllSelectedProducts)  {
-        res.send(getAllSelectedProducts)
-       }
-    } catch (error) {
-         res.status(500).json({error: "get all selected product failed internal server error"})
-    }
-     
-} )
 
 
 

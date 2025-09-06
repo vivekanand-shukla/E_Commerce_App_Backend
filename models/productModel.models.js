@@ -44,7 +44,26 @@ const productSchema = new mongoose.Schema({
     diliveryCharges:{
         type:Number,
         
-    }
+    },
+    
+        isAddedToCart :{
+        type:    Boolean,
+        default: false
+
+        },
+        isAddedToWishList:{
+         type:   Boolean,
+         default :false
+           },
+        productQuantity:{
+            type: Number,
+                  default: 1},
+
+        isProductOrdered:{
+         type:   Boolean,
+         default :false
+           }
+
 })
 
 const products =  mongoose.model('products' , productSchema);
