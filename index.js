@@ -1,6 +1,6 @@
 const {connectDb}  = require("./connect/db.connect");
 connectDb();
-const address = require("./models/address.models")
+const Address  = require("./models/address.models")
 const category = require("./models/category.models")
 const product = require("./models/productModel.models")
 
@@ -200,7 +200,77 @@ app.post('/api/products/update/:id' , async(req,res)=>{
     }
 })
 
+// ====Address section =====
 
+app.post("/api/address", async (req, res) => {
+  try {
+    if(req.body.address){
+      const newAdress = new Address(req.body)
+
+    
+    const data = await newAdress.save()
+    res.json(data);}
+    else{
+      res.status(400).json({message:"enter correct field"})
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Read all
+app.get("/api/address", async (req, res) => {
+  try {
+    const data = await Address.find();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Read one
+app.get("/api/address/:id", async (req, res) => {
+  try {
+    const data = await Address.findById(req.params.id);
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Update
+app.post("/address/:id", async (req, res) => {
+  try {
+    const data = await Address.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Delete
+app.delete("/api/address/:id", async (req, res) => {
+  try {
+    const data = await Address.findByIdAndDelete(req.params.id);
+    res.json({ message: "Deleted", data });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+
+app.post("/api/choosedAdress", async (req, res) => {
+  try {
+    const result = await Address.updateMany({}, { choosedAddressForOrder: req.body.newChoosedAddress });
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
+// ====Address section end =====
 
 
 

@@ -1,15 +1,16 @@
-const mongoose = require("mongoose")
-const addressSchema = new mongoose.Schema({
-      
-    address:[{
-         type:String,
-          
-    }],
+const mongoose = require("mongoose");
 
-    choosedAddressForOrder: {
-      type:String,
-      
-    }
-})
-const address = mongoose.model('address' ,addressSchema )
-module.exports = address;
+const addressSchema = new mongoose.Schema({
+  address: 
+    {
+      type: String,
+    },
+  
+  choosedAddressForOrder: {
+    type: String,
+    default: "",
+  }
+});
+
+const Address = mongoose.model("Address", addressSchema);
+module.exports = Address;
