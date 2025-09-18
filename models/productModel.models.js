@@ -62,7 +62,14 @@ const productSchema = new mongoose.Schema({
         isProductOrdered:{
          type:   Boolean,
          default :false
+           },
+           size:{
+            type:String,
+            enum:["S", "M", "L", "XL", "XXL"]
+            ,
+            default:"S"
            }
+
 
 })
 

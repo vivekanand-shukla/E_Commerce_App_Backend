@@ -275,52 +275,6 @@ app.post("/api/choosedAdress", async (req, res) => {
 
 
 
-// get single product
-// async function getSingleProduct(id) {
-//     try {
-//         const singleProduct = await product.findById(id)
-//         return singleProduct
-//     } catch (error) {
-//         console.log("error is : ", error)
-//     }
-// }
-
-// app.get('/api/product/:id', async (req, res) => {
-//     try {
-//         const singleProduct = await getSingleProduct(req.params.id)
-//         if (singleProduct) {
-//             res.send(singleProduct)
-//         } else {
-//             res.status(404).json({ error: "Product not found" })
-//         }
-//     } catch (error) {
-//         res.status(500).json({ error: "get single product failed internal server error" })
-//     }
-// })
-
-// // get single category
-// async function getSingleCategory(category) {
-//     try {
-//         const singleCategory = await product.find({category:category}).populate("category")
-//         return singleCategory
-//     } catch (error) {
-//         console.log("error is : ", error)
-//     }
-// }
-
-// app.get('/api/category/:id', async (req, res) => {
-//     try {
-//         const singleCategory = await getSingleCategory(req.params.id)
-//         if (singleCategory) {
-//             res.send(singleCategory)
-//         } else {
-//             res.status(404).json({ error: "Category not found" })
-//         }
-//     } catch (error) {
-//         res.status(500).json({ error: "get single category failed internal server error" })
-//     }
-// })
-
 
 
 
